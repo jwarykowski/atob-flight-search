@@ -16,4 +16,4 @@ app.use(express.static(buildPath));
 app.use(routes.web);
 app.use('/api', routes.api);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
