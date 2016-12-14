@@ -53,9 +53,9 @@
 
     FormView.prototype.getFormValues = function() {
         return {
-            origin: this.$originInput.val(),
-            destination: this.$destinationInput.val(),
-            date: this.$dateInput.val()
+            origin: this.$originInput.val().trim(),
+            destination: this.$destinationInput.val().trim(),
+            date: this.$dateInput.val().trim()
         };
     }
 
