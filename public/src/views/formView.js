@@ -20,7 +20,7 @@
 
     function validateDateInput(event) {
         var $input = $(event.target);
-        var date = moment($input.val());
+        var date = $input.val();
 
         if (dateHelper.isValidSearchDate(date)) {
             return $input.addClass('valid').removeClass('invalid');
