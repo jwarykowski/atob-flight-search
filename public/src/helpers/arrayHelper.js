@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
     'use strict';
 
     var arrayHelper = {};
@@ -9,6 +9,6 @@
         }, 0);
     }
 
-	window.arrayHelper = arrayHelper;
+    window.arrayHelper = arrayHelper;
 
 })(window);

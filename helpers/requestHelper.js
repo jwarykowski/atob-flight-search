@@ -7,7 +7,11 @@ function fetchData(path) {
 }
 
 function fetchFlightForRoute(date, route) {
-    const { airlineCode, originCode, destinationCode } = route;
+    const {
+        airlineCode,
+        originCode,
+        destinationCode
+    } = route;
     return fetchData(`flight_search/${airlineCode}?date=${date}&from=${originCode}&to=${destinationCode}`);
 }
 
@@ -29,7 +33,7 @@ function handleResponse(response) {
     return response.json();
 }
 
-var requestHelper = {};
+let requestHelper = {};
 
 requestHelper.fetchAirlines = function() {
     return fetchData('airlines');
@@ -41,7 +45,7 @@ requestHelper.fetchAirports = function(cityName) {
 }
 
 requestHelper.fetchAirportCodesAndAirlines = function(origin, destination) {
-    return Promise.all([this.fetchAirports(origin), this.fetchAirports(destination),  this.fetchAirlines()]);
+    return Promise.all([this.fetchAirports(origin), this.fetchAirports(destination), this.fetchAirlines()]);
 }
 
 requestHelper.fetchFlightsForRoutes = function(date, routes) {

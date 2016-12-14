@@ -32,7 +32,11 @@ router.get('/airports', (req, res) => {
 });
 
 router.post('/search', (req, res) => {
-    const { date, origin, destination } = req.body;
+    const {
+        date,
+        origin,
+        destination
+    } = req.body;
     const sortKey = 'price';
 
     return requestHelper.fetchAirportCodesAndAirlines(origin, destination)

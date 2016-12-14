@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
     'use strict';
 
     var noResultsMesssage = 'No results returned from search, please try again.';
@@ -12,7 +12,9 @@
                 origin: origin,
                 destination: destination
             }),
-            headers: { 'Content-Type': 'application/json' }
+            headers: {
+                'Content-Type': 'application/json'
+            }
         };
     }
 
@@ -51,6 +53,6 @@
             .then(handleNoResults);
     }
 
-	window.requestHelper = requestHelper;
+    window.requestHelper = requestHelper;
 
 })(window);

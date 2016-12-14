@@ -1,4 +1,4 @@
-(function ($, arrayHelper, dateHelper, requestHelper, window) {
+(function($, arrayHelper, dateHelper, requestHelper, window) {
     'use strict';
 
     var requestErrorMessage = 'There was an error sending the request, please try again.';
@@ -23,7 +23,7 @@
         var $element = $(event.target);
         var searchDate;
 
-        if(!$element.is('a.tab')) {
+        if (!$element.is('a.tab')) {
             return;
         }
 
@@ -79,6 +79,6 @@
     }
 
     window.application = window.application || {};
-	window.application.FlightSearchController = FlightSearchController;
+    window.application.FlightSearchController = FlightSearchController;
 
 })(window.jQuery, window.arrayHelper, window.dateHelper, window.requestHelper, window);

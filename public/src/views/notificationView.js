@@ -1,21 +1,21 @@
-(function ($, moment, window) {
-	'use strict';
+(function($, moment, window) {
+    'use strict';
 
     function NotificationView() {
-		this.$el = $('#notifications');
-		this.template = Handlebars.templates['notificationItem'];
+        this.$el = $('#notifications');
+        this.template = Handlebars.templates['notificationItem'];
     }
 
     NotificationView.prototype.showNotification = function(data) {
-		var html = this.template(data);
+        var html = this.template(data);
         this.$el.html(html);
     }
 
     NotificationView.prototype.showErrorNotification = function(text) {
-		var data = {
-			className: 'error',
-			text: 'Error! ' + text
-		};
+        var data = {
+            className: 'error',
+            text: 'Error! ' + text
+        };
 
         this.showNotification(data);
     }
@@ -27,26 +27,28 @@
         var text = 'Please wait, requesting flights across all available airlines between ' +
             startDate + ' and ' + endDate + '.';
 
-		var data = { text: text };
+        var data = {
+            text: text
+        };
 
         this.showNotification(data);
     }
 
     NotificationView.prototype.showResultsNotification = function(resultsCount, searchDates) {
         var dayCount = searchDates.length;
-		var daysText = searchDates.length > 1 ? 'days' : 'day';
+        var daysText = searchDates.length > 1 ? 'days' : 'day';
 
         var text = 'Please see the ' + resultsCount + ' available flights across the ' +
-        	dayCount + ' ' + daysText + ' below.'
+            dayCount + ' ' + daysText + ' below.'
 
         this.showSuccessNotification(text);
     }
 
     NotificationView.prototype.showSuccessNotification = function(text) {
-		var data = {
-			className: 'success',
-			text: 'Success! ' + text
-		};
+        var data = {
+            className: 'success',
+            text: 'Success! ' + text
+        };
 
         this.showNotification(data);
     }

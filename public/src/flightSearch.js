@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     function FlightSearch(options) {
@@ -11,8 +11,10 @@
             tabsView: new application.TabsView()
         };
 
-    	this.controller = new application.FlightSearchController(searchDateRange, views);
+        this.controller = new application.FlightSearchController(searchDateRange, views);
     }
 
-    var flightSearch = new FlightSearch({searchDateRange: 2});
+    var flightSearch = new FlightSearch({
+        searchDateRange: 2
+    });
 })();

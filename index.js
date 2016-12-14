@@ -10,7 +10,9 @@ const buildPath = path.resolve(__dirname, 'public');
 
 app.use(compress());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(morgan('combined'));
 app.use(express.static(buildPath));
 app.use(routes.web);

@@ -1,20 +1,20 @@
 (function ($, Handlebars, window) {
-	'use strict';
+    'use strict';
 
-	function createTabElements(searchDates, results) {
+    function createTabElements(searchDates, results) {
         var view = this;
 
-		return searchDates.map(function(date, index) {
+        return searchDates.map(function(date, index) {
             var flightData = results[index].map(function(flight) {
                 return getFlightData(flight);
             });
 
             return view.template({ date: date, flights: flightData });
-		});
-	}
+        });
+    }
 
-	function getFlightData(flight) {
-		return {
+    function getFlightData(flight) {
+        return {
             airlineName: flight.airline.name,
             distance: numeral(flight.distance).format('0.0a'),
             destinationCityName: flight.finish.cityName,
@@ -30,29 +30,29 @@
             plane: flight.plane.shortName,
             price: numeral(flight.price).format('$0,0.00')
         };
-	}
+    }
 
     function TabsView() {
         this.$el = $('#tabs');
         this.template = Handlebars.templates['tabItem'];
     }
 
-	TabsView.prototype.remove = function(requestedDate, searchDates) {
-		this.$el.empty();
+    TabsView.prototype.remove = function(requestedDate, searchDates) {
+        this.$el.empty();
     }
 
     TabsView.prototype.render = function(searchDates, results) {
-		var $tabItems = createTabElements.bind(this, searchDates, results);
-		this.$el.html($tabItems);
+        var $tabItems = createTabElements.bind(this, searchDates, results);
+        this.$el.html($tabItems);
     }
 
     TabsView.prototype.setActiveTab =  function(date) {
-		this.$el.find('div.panel').hide().filter(function() {
-    		return ($(this).data('date') === date);
-  		}).show();
-	}
+        this.$el.find('div.panel').hide().filter(function() {
+            return ($(this).data('date') === date);
+          }).show();
+    }
 
-	Handlebars.registerPartial('flightItem', Handlebars.templates['flightItem']);
+    Handlebars.registerPartial('flightItem', Handlebars.templates['flightItem']);
 
     window.application = window.application || {};
     window.application.TabsView = TabsView;

@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
     'use strict';
 
     var dateHelper = {};
@@ -22,6 +22,6 @@
         return searchDates;
     }
 
-	window.dateHelper = dateHelper;
+    window.dateHelper = dateHelper;
 
 })(window);

@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>ATOB Flight Search</title>
 
-    </head>
-    <body>
-        <header>
-            <h1>ATOB Flight Search</h1>
-            <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>ATOB Flight Search</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
 
-        <main>
-            <section id="search">
-                <form id="searchForm">
-                    <div class="field">
-                        <label for="origin">Your Origin</label>
-                        <input type="text" list="originList" id="origin" name="origin" required autofocus></input>
-                    </div>
+<body>
+    <header>
+        <h1>ATOB Flight Search</h1>
+    </header>
 
-                    <div class="field">
-                        <label for="destination">Your Destination</label>
-                        <input type="text" id="destination" name="destination" required></input>
-                    </div>
+    <main>
+        <section id="search">
+            <form id="searchForm">
+                <div class="field">
+                    <label for="origin">Your Origin</label>
+                    <input type="text" list="originList" id="origin" name="origin" required autofocus></input>
+                </div>
 
-                    <div class="field">
-                        <label for="date">Your Travel Date</label>
-                        <input type="date" id="date" name="date" required></input>
-                    </div>
+                <div class="field">
+                    <label for="destination">Your Destination</label>
+                    <input type="text" id="destination" name="destination" required></input>
+                </div>
 
-                    <input id="search" type="submit" value="Search" form="searchForm" disabled='disabled'></input>
-                </form>
-            </section>
+                <div class="field">
+                    <label for="date">Your Travel Date</label>
+                    <input type="date" id="date" name="date" required></input>
+                </div>
 
-            <section id="notifications">
-                <p>Welcome to ATOB Flight Search, please use the form above to search for flights.</p>
-            </section>
+                <input id="search" type="submit" value="Search" form="searchForm" disabled='disabled'></input>
+            </form>
+        </section>
 
-            <section id="results">
-                <ul id="tabList"></ul>
-                <div id="tabs"></div>
-            </section>
-        </main>
+        <section id="notifications">
+            <p>Welcome to ATOB Flight Search, please use the form above to search for flights.</p>
+        </section>
 
-        <!-- library dependencies -->
-        <script src="lib/jquery.min.js"></script>
-        <script src="lib/handlebars.min.js"></script>
-        <script src="lib/numeral.min.js"></script>
-        <script src="lib/moment.min.js"></script>
+        <section id="results">
+            <ul id="tabList"></ul>
+            <div id="tabs"></div>
+        </section>
+    </main>
 
-        <!-- application dependencies -->
-        <!-- precompiled handlebar templates -->
-        <script src="src/templates/templates.js"></script>
+    <!-- library dependencies -->
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/handlebars.min.js"></script>
+    <script src="lib/numeral.min.js"></script>
+    <script src="lib/moment.min.js"></script>
 
-        <!-- scripts -->
-        <script src="src/helpers/arrayHelper.js"></script>
-        <script src="src/helpers/dateHelper.js"></script>
-        <script src="src/helpers/requestHelper.js"></script>
-        <script src="src/views/formView.js"></script>
-        <script src="src/views/notificationView.js"></script>
-        <script src="src/views/tabListView.js"></script>
-        <script src="src/views/tabsView.js"></script>
-        <script src="src/controllers/flightSearchController.js"></script>
-        <script src="src/flightSearch.js"></script>
-    </body>
+    <!-- application dependencies -->
+    <!-- precompiled handlebar templates -->
+    <script src="src/templates/templates.js"></script>
+
+    <!-- scripts -->
+    <script src="src/helpers/arrayHelper.js"></script>
+    <script src="src/helpers/dateHelper.js"></script>
+    <script src="src/helpers/requestHelper.js"></script>
+    <script src="src/views/formView.js"></script>
+    <script src="src/views/notificationView.js"></script>
+    <script src="src/views/tabListView.js"></script>
+    <script src="src/views/tabsView.js"></script>
+    <script src="src/controllers/flightSearchController.js"></script>
+    <script src="src/flightSearch.js"></script>
+</body>
+
 </html>

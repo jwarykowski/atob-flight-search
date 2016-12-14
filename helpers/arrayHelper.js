@@ -1,4 +1,4 @@
-var arrayHelper = {};
+let arrayHelper = {};
 
 arrayHelper.flattenArrays = function(results) {
     return results.reduce((memo, array) => memo.concat(array), []);
