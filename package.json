@@ -1,0 +1,26 @@
+{
+  "name": "atob-flight-search",
+  "version": "1.0.0",
+  "description": "Flight search technical test",
+  "main": "index.js",
+  "repository": "https://github.com/jonathanchrisp/atob-flight-search",
+  "author": "Jonathan Chrisp",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "node-fetch": "^1.6.3"
+  },
+  "scripts": {
+    "prestart": "yarn install --no-progress --prod",
+    "start": "node index.js",
+    "test": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs public/tests/test.html"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-phantomjs": "^4.1.0"
+  }
+}
