@@ -22,6 +22,13 @@
         return searchDates;
     }
 
+    dateHelper.isValidSearchDate = function(date) {
+        var searchDate = moment(date);
+        var today = moment().startOf('day');
+
+        return searchDate.isValid() && searchDate.isSameOrAfter(today);
+    }
+
     window.dateHelper = dateHelper;
 
 })(window);

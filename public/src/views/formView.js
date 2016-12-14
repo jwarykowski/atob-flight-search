@@ -3,7 +3,7 @@
 
     function toggleSubmitButton() {
         var data = this.getFormValues();
-        var disable = data.origin && data.destination && data.date;
+        var disable = data.origin && data.destination && dateHelper.isValidSearchDate(data.date);
 
         this.$searchButton.prop('disabled', !disable);
     }
@@ -20,8 +20,9 @@
 
     function validateDateInput(event) {
         var $input = $(event.target);
+        var date = moment($input.val());
 
-        if (moment($input.val()).isValid()) {
+        if (dateHelper.isValidSearchDate(date)) {
             return $input.addClass('valid').removeClass('invalid');
         }
 
